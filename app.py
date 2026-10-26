@@ -1,7 +1,12 @@
 from flask import Flask, render_template, request, redirect
 import controlador_juegos
+# Importamos el Blueprint de nuestra API
+from api.routes import api_bp
 
 app = Flask(__name__)
+
+# Registramos la API con el prefijo /api
+app.register_blueprint(api_bp, url_prefix='/api')
 
 
 @app.route("/agregar_juego")

@@ -1,0 +1,18 @@
+### Obtener todos los juegos (GET)
+curl -X GET http://localhost:8000/api/juegos
+
+### Crear un nuevo juego (POST)
+curl -X POST http://localhost:8000/api/juegos \
+-H "Content-Type: application/json" \
+-d '{"nombre": "Halo Infinite", "descripcion": "Juego de disparos", "precio": 1000.00}'
+
+### Actualizar un juego existente (PUT) - Cambiar ID según corresponda
+curl -X PUT http://localhost:8000/api/juegos/1 \
+-H "Content-Type: application/json" \
+-d '{"nombre": "Halo Infinite", "descripcion": "Juego de disparos", "precio": 850.50}'
+
+### Eliminar un juego (DELETE) - Cambiar ID según corresponda
+curl -X DELETE http://localhost:8000/api/juegos/1
+
+### Obtener error 404 (GET con ID inexistente)
+curl -X GET http://localhost:8000/api/juegos/9999
